@@ -1,0 +1,4 @@
+.container {
+  @apply flex flex-col justify-center items-center py-2 bg-white relative;
+  margin-top: -5rem;
+}

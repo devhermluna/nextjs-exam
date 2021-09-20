@@ -1,0 +1,3 @@
+.card {
+  @apply shadow-xl bg-white rounded-lg overflow-hidden;
+}
