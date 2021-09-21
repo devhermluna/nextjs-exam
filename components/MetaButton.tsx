@@ -20,6 +20,7 @@ const MetaButton = ({
     onClick={() => {
       if (callback) callback();
     }}
+    data-testid={icon}
   >
     <Icon
       name={icon}

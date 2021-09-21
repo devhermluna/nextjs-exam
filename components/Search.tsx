@@ -29,11 +29,12 @@ const Search = ({
       <div className="bg-white rounded-lg flex items-center px-3">
         <Icon name="search" />
         <InputWithDebounce
+          name="search"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             onChange(e.target.value);
           }}
           className="flex-grow h-12 bg-transparent px-2"
-          placeholder="Search image..."
+          placeholder="Search..."
         />
         <div className="controls flex items-center">
           <MetaButton

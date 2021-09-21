@@ -3,12 +3,14 @@ import React, { ChangeEvent } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 
 interface Props {
+  name: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   placeholder: string;
 }
 
 const InputWithDebounce = ({
+  name,
   onChange,
   className,
   placeholder,
@@ -18,6 +20,7 @@ const InputWithDebounce = ({
     onChange={onChange}
     className={classNames(className, 'border-none outline-none')}
     placeholder={placeholder}
+    name={name}
   />
 );
 
