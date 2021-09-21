@@ -2,10 +2,7 @@
 
 describe('Jobs', () => {
   beforeEach(() => {
-    cy.intercept({
-      method: 'GET',
-      url: '/jobs*',
-    }).as('getJobs');
+    cy.intercept('GET', '/jobs*').as('getJobs');
     cy.visit('http://localhost:3000/jobs');
   });
 
@@ -22,5 +19,19 @@ describe('Jobs', () => {
   it('should render the job item in job results', () => {
     cy.wait('@getJobs');
     cy.get('#job-results').find('.job-item').its('length').should('be.greaterThan', 0);
+  });
+
+  it('should visit the first job item link', () => {
+    cy.wait('@getJobs');
+    cy.get('#job-results').find('.job-item a').first()
+      .invoke('attr', 'href')
+      .then((href) => {
+        cy.wrap(href).as('url');
+        cy.visit(`http://localhost:3000/${href}`);
+      });
+
+    cy.get('@url').then((url) => {
+      cy.url().should('include', url);
+    });
   });
 });
