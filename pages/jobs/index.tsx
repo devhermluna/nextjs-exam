@@ -75,8 +75,10 @@ const jobs = () => {
             />
           </div>
         </div>
-        {!loading && jobItems.map((item: Job) => (<JobItem key={item.id} {...item} />))}
-        {loading && range(20).map((item) => (<JobItemLoader key={item} />))}
+        <div id="job-results">
+          {!loading && jobItems.map((item: Job) => (<JobItem key={item.id} {...item} />))}
+          {loading && range(20).map((item) => (<JobItemLoader key={item} />))}
+        </div>
       </Card>
     </DefaultLayout>
   );

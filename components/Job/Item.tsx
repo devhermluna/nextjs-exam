@@ -16,7 +16,7 @@ const JobItem = ({
 }: Props) => (
   <div
     key={id}
-    className={classNames('py-3', hasBorder && 'border-t')}
+    className={classNames('job-item py-3', hasBorder && 'border-t')}
   >
     <Link href={`/jobs/${id}`}>
       <a className="text-lg text-blue-700 font-semibold">{name}</a>

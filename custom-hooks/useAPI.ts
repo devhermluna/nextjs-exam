@@ -4,7 +4,7 @@ import jobs from '@/api/resources/jobs';
 
 export const endpoints = {
   photos,
-  jobs
+  jobs,
 };
 
 const useAPI = (...args: Array<string>) => args.reduce((accumulator: Array<any>, current) => {

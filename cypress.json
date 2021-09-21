@@ -1,0 +1,12 @@
+{
+  "viewportHeight": 600,
+  "viewportWidth": 1000,
+  "component": {
+    "viewportHeight": 500,
+    "viewportWidth": 500
+  },
+  "defaultCommandTimeout": 5000,
+  "e2e": {
+    "defaultCommandTimeout": 10000
+  }
+}
